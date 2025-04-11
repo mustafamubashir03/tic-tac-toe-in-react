@@ -1,0 +1,24 @@
+.card{
+    border: 2px solid gray;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    background-color: var(--coolGray);
+    transition: all 0.3s ease;
+    border-color: var(--coolGray);
+    
+}
+
+.card:hover{
+    scale: 1.1;
+    animation-duration: 0.8;
+    transition-timing-function:cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:active{
+    scale:0.8;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

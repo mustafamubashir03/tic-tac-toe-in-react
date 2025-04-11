@@ -1,0 +1,26 @@
+:root{
+  --coolGray: #999AC6;
+  --lightGray:#E8EBE4;
+}
+
+body{
+  background-color: var(--lightGray);
+  color: #302e32;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:100vh;
+}
+
+.result{
+  background-color: lightgreen;
+  border:1.5px solid darkgreen;
+  color:darkgreen;
+  border-radius: 24px;
+  padding: 8px 24px;
+}
