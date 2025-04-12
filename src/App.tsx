@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Grid from './components/grid/Grid'
 import Button from './components/button/Button'
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
@@ -42,7 +43,8 @@ const handleRestart=()=>{
     const diag1Equal = board[0]=== board[4] && board[4]===board[8] && board[8]!==""
     const diag2Equal = board[2]=== board[4] && board[4]===board[6] && board[6]!==""
     if(row1Equal || row2Equal || row3Equal|| col1Equal|| col2Equal || col3Equal|| diag1Equal || diag2Equal){
-          return turn
+      toast(`${icon} have won the game`)
+      return turn
     }else{
       return null;
     }
@@ -50,7 +52,20 @@ const handleRestart=()=>{
 
   return (
 <div className='main'>
-  {result && <p className='result'><b>{icon==="circle"?"Cross":"Circle"}</b> have won the match</p>}
+<ToastContainer
+position="top-center"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Bounce}
+/>
+
   <h1>Tic Tac Toe</h1>
   {result && <Button onClick={handleRestart}>Restart</Button>}
   <h2>Current turn: {turn?'X':"O"}</h2>
