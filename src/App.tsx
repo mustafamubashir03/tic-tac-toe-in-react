@@ -9,12 +9,11 @@ function App() {
   const [turn ,setTurn] = useState(true)
   const [board,setBoard] = useState<string[]>(Array(9).fill(""))
   const icon = turn?"cross":"circle"
-  console.log("turn of",icon)
   const [result,setResult] = useState<string|null>(null)
 
 const handleRestart=()=>{
   setTurn(true)
-  setBoard(board=>Array(9).fill(""))
+  setBoard(Array(9).fill(""))
   setResult(null)
 }
 
